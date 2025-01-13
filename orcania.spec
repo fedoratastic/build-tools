@@ -41,7 +41,7 @@ Development and header files for orcania.
 
 %build
 %cmake
-make %{?_smp_mflags}
+%cmake_build
 
 %install
 %cmake_install

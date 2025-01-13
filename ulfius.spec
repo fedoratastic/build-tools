@@ -43,14 +43,14 @@ It can be used to create web applications in C programs.
 %package devel
 Summary:        Header files for ulfius
 Group:          Development/Libraries/C and C++
-Requires:       libcurl-devel
-Requires:       libgnutls-devel
-Requires:       libjansson-devel
-Requires:       libmicrohttpd-devel
+Requires:       pkgconfig(libcurl)
+Requires:       pkgconfig(gnutls)
+Requires:       pkgconfig(jansson) >= 2.1
+Requires:       pkgconfig(libmicrohttpd) >= 0.9.51
 Requires:       libulfius%{sover} = %{version}
-Requires:       orcania-devel
-Requires:       yder-devel
-Requires:       zlib-devel
+Requires:       pkgconfig(liborcania) >= 2.3.2
+Requires:       pkgconfig(libyder) >= 1.4.20
+Requires:       pkgconfig(zlib)
 
 %description devel
 Development and header files for libulfius.
@@ -93,6 +93,6 @@ rm -rf %{buildroot}/%{_datadir}/doc/
 
 %files -n uwsc
 %{_bindir}/uwsc
-%{_mandir}/man1/uwsc.1%{?ext_man}
+%{_mandir}/man1/uwsc.1*
 
 %changelog
