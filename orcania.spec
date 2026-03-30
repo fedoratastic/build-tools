@@ -40,7 +40,7 @@ Development and header files for orcania.
 %setup -q
 
 %build
-%cmake
+CFLAGS="%{build_cflags} -Wno-error=discarded-qualifiers" %cmake
 %cmake_build
 
 %install
